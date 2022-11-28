@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-zinc-800 text-zinc-100;
+  }
+  nav {
+    @apply bg-zinc-800;
+  }
+  #mobile-nav-links {
+    @apply bg-zinc-700 p-4 mt-2;
+  }
+  #mobile-nav-links a {
+    @apply bg-zinc-900 p-2 rounded-md hover:bg-fuchsia-400 transition-all;
+  }
+}
+
 @layer components {
   h1.brand {
     @apply font-nunito font-bold text-2xl md:text-3xl lg:text-4xl;
