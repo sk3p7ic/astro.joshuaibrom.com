@@ -1,0 +1,29 @@
+---
+import ProjectCard from "./components/ProjectCard.astro";
+
+// Get all projects listed in src/content/projects
+const featuredProjects = (
+  await Astro.glob("../../content/projects/*.md")
+).filter((p) => p.frontmatter.feature);
+
+const getFrontmatter = (p: typeof featuredProjects[0]) => {
+  const frontmatter = p.frontmatter as {
+    title: string;
+    description: string;
+    stack: string;
+    imageUrl: string;
+    featured: boolean;
+  };
+  const stack = frontmatter.stack.split(",");
+  return { ...frontmatter, stack };
+};
+---
+
+<div class="mt-4">
+  <h2
+    class="w-fit pb-1 font-raleway text-xl md:text-2xl lg:text-3xl xl:text-4xl border-b border-b-zinc-100"
+  >
+    projects.
+  </h2>
+  {featuredProjects.map((p) => <ProjectCard frontmatter={getFrontmatter(p)} />)}
+</div>

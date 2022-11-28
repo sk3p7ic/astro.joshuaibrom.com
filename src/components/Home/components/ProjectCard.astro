@@ -1,0 +1,20 @@
+---
+type FrontmatterType = {
+  title: string;
+  description: string;
+  stack: string[];
+  imageUrl: string;
+  featured: boolean;
+};
+
+export interface Props {
+  frontmatter: FrontmatterType;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<div>
+  <h3>{frontmatter.title}</h3>
+  {frontmatter.stack.map((x) => `${x}  `)}
+</div>
