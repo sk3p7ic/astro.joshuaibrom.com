@@ -1,11 +1,27 @@
+---
+import MobileNavigation from "./MobileNavigation.svelte";
+
+type LinkType = {
+  href: string;
+  title: string;
+};
+
+const links: LinkType[] = [
+  { href: "/", title: "home" },
+  { href: "/projects", title: "projects" },
+  { href: "/about", title: "about" },
+  { href: "/socials", title: "socials" },
+];
+---
+
 <header
   class="py-2 px-2 md:px-4 lg:px-12 xl:px-24 flex flex-row justify-between items-end"
 >
   <h1 class="brand">joshua ibrom</h1>
+  <div class="block md:hidden relative">
+    <MobileNavigation client:visible links={links} />
+  </div>
   <nav class="hidden md:flex flex-row gap-4 nav-item">
-    <a href="/">home</a>
-    <a href="/projects">projects</a>
-    <a href="/about">about</a>
-    <a href="/socials">socials</a>
+    {links.map((link) => <a href={link.href}>{link.title}</a>)}
   </nav>
 </header>
