@@ -8,11 +8,6 @@
 
 <button class="menu-controller" on:click={toggleMenu} aria-controls="mobile-nav-links" aria-expanded={showMenu}>
   <svg class="hamburger" viewBox="-10 -10 120 120" width="32">
-    <!--
-    <rect class="line top" width="80" height="10" x="10" y="25" rx="5" />
-    <rect class="line middle" width="80" height="10" x="10" y="45" rx="5" />
-    <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5" />
-    -->
     <path
       class="line"
       stroke-width="10"
