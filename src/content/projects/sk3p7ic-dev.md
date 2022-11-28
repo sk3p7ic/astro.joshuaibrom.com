@@ -3,6 +3,7 @@ title: Sk3p7ic Dev
 description: Website intended to advertise my services as a fullstack developer.
 stack: vue,tailwind
 imageUrl: /res/projects/sk3p7ic_dev.png
+feature: true
 ---
 
 > Deployment: [sk3p7ic.tech](https://sk3p7ic.tech)

@@ -3,6 +3,7 @@ title: Sorting Visualizer
 description: A basic web application allowing a user to view various common sorting algorithms in use.
 stack: angular,sass
 imageUrl: sorting_visualizer.png
+feature: true
 ---
 
 > GitHub: [sk3p7ic/sorting-visualizer](https://github.com/sk3p7ic/sorting-visualizer)  

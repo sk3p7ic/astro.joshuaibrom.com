@@ -3,6 +3,7 @@ title: This Site
 description: My personal portfolio website.
 stack: astro,svelte,tailwind
 imageUrl: /res/projects/personal_site.png
+feature: true
 ---
 
 > GitHub: [sk3p7ic/astro.joshuaibrom.com](https://github.com/sk3p7ic/astro.joshuaibrom.com)  
