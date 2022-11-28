@@ -19,7 +19,7 @@
 {#if showMenu}
   <nav class="fixed left-0 right-0 h-full flex flex-col gap-2 nav-item transition-all" id="mobile-nav-links">
     {#each links as link}
-      <a href={link.href}>{link.title}</a>
+      <a href={link.href} class="nav-item">{link.title}</a>
     {/each}
   </nav>
 {/if}
