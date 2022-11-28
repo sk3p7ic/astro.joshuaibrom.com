@@ -28,4 +28,8 @@
   nav .nav-item {
     @apply font-nunito text-lg md:text-xl lg:text-2xl transition-colors;
   }
+
+  nav .nav-item:hover {
+    @apply text-fuchsia-400;
+  }
 }
