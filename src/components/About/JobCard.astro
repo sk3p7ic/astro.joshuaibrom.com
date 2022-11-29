@@ -17,12 +17,12 @@ const toDate = (ds?: string): string =>
   ds ? Intl.DateTimeFormat("en-us").format(new Date(ds)) : "";
 ---
 
-<div class="p-4 font-inter bg-zinc-700 rounded-xl">
+<div class="p-4 font-inter bg-zinc-700 rounded-xl flex flex-col gap-2">
   <div class="border-b border-b-zinc-400">
     <h1 class="font-raleway font-bold text-3xl">{entry.employer}</h1>
     <h2 class="font-raleway font-thin text-2xl">{entry.title}</h2>
   </div>
-  <div>
+  <div class="flex-grow">
     {
       entry.responsibilities.map((resp) =>
         typeof resp === "string" ? (
@@ -37,7 +37,7 @@ const toDate = (ds?: string): string =>
       )
     }
   </div>
-  <p>
+  <p class="text-sm text-zinc-400">
     {toDate(entry.start_date)}
     {entry.end_date ? `- ${toDate(entry.end_date)}` : ""}
   </p>
