@@ -34,7 +34,11 @@ const { standalone } = Astro.props;
   >
     {standalone ? "find me elsewhere on the web." : "socials."}
   </h2>
-  <div class="px-2 flex flex-col gap-4">
+  <div
+    class={`px-2 flex flex-col gap-4 ${
+      standalone ? "standalone-container" : ""
+    }`}
+  >
     {
       socials.map((soc) => (
         <a
@@ -54,8 +58,12 @@ const { standalone } = Astro.props;
 <style>
   @tailwind components;
   @layer components {
+    .standalone-container {
+      @apply md:w-1/2 lg:w-1/4 xl:w-1/4;
+    }
+
     .standalone {
-      @apply bg-zinc-600;
+      @apply p-3 text-zinc-100 hover:text-zinc-100 hover:bg-gradient-to-r from-zinc-800 to-zinc-800 hover:from-fuchsia-600 hover:to-purple-500 border border-zinc-100 rounded-xl hover:scale-105 hover:rounded-lg transition-all;
     }
   }
 </style>
