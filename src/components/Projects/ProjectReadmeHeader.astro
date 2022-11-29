@@ -1,4 +1,5 @@
 ---
+import {Icon} from 'astro-icon';
 export interface Props {
   frontmatter: any;
 }
@@ -6,7 +7,10 @@ export interface Props {
 const {frontmatter} = Astro.props;
 ---
 
-<div>
-  <h1>{frontmatter.title}</h1>
-  <div class="h-64 md:h-72 lg:h-96 overflow-hidden" style={{backgroundImage: `url(${frontmatter.imageUrl})`, backgroundSize: 'cover'}} />
+<div class="flex flex-col gap-4">
+  <a href="/projects" title="Go back to all projects." class="w-fit h-fit p-1 ml-2 bg-fuchsia-500 rounded-full">
+    <Icon name="ic:round-arrow-back" class="w-8 h-auto" />
+  </a>
+  <h1 class="font-raleway font-bold text-xl md:text-2xl lg:text-4xl xl:text-6xl">{frontmatter.title}</h1>
+  <div class="h-64 md:h-72 lg:h-96 overflow-hidden rounded-lg" style={{backgroundImage: `url(${frontmatter.imageUrl})`, backgroundSize: 'cover'}} />
 </div>
