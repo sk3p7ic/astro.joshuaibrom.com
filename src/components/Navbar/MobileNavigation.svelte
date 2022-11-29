@@ -1,5 +1,6 @@
 <script>
   export let links;
+  export let currentPage;
 
   let showMenu = false;
 
@@ -19,7 +20,7 @@
 {#if showMenu}
   <nav class="fixed left-0 right-0 h-full flex flex-col gap-2 nav-item transition-all" id="mobile-nav-links">
     {#each links as link}
-      <a href={link.href} class="nav-item">{link.title}</a>
+      <a href={link.href} class="nav-item" class:current-page="{currentPage === link.href}">{link.title}</a>
     {/each}
   </nav>
 {/if}
@@ -42,5 +43,8 @@
   .menu-controller[aria-expanded="true"] .hamburger .line {
     stroke-dasharray: 60 105 60 300;
     stroke-dashoffset: -90;
+  }
+  .current-page {
+    @apply text-cyan-400;
   }
 </style>

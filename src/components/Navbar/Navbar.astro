@@ -19,12 +19,21 @@ const links: LinkType[] = [
 >
   <h1 class="brand"><a href="https://joshuaibrom.com">joshua ibrom</a></h1>
   <div class="block md:hidden relative">
-    <MobileNavigation client:visible links={links} />
+    <MobileNavigation
+      client:visible
+      links={links}
+      currentPage={Astro.url.pathname}
+    />
   </div>
   <nav class="hidden md:flex flex-row gap-4 nav-item">
     {
       links.map((link) => (
-        <a href={link.href} class="nav-item">
+        <a
+          href={link.href}
+          class={`nav-item ${
+            link.href === Astro.url.pathname ? "text-cyan-400" : ""
+          }`}
+        >
           {link.title}
         </a>
       ))
