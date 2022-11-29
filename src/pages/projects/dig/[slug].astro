@@ -1,6 +1,7 @@
 ---
 import "../../../styles/projectReadme.css";
 import Layout from "../../../layouts/Layout.astro";
+import ProjectReadmeHeader from "../../../components/Projects/ProjectReadmeHeader.astro";
 
 export const getStaticPaths = async () => {
   const allProjects = await Astro.glob("../../../content/projects/*.md");
@@ -21,7 +22,10 @@ const { project } = Astro.props;
 ---
 
 <Layout title={`Joshua Ibrom -- ${project.frontmatter.title}`}>
-  <main class="projectReadme">
-    <project.Content />
+  <main>
+    <ProjectReadmeHeader frontmatter={project.frontmatter} />
+    <div class="projectReadme">
+      <project.Content />
+    </div>
   </main>
 </Layout>

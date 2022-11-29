@@ -1,0 +1,12 @@
+---
+export interface Props {
+  frontmatter: any;
+}
+
+const {frontmatter} = Astro.props;
+---
+
+<div>
+  <h1>{frontmatter.title}</h1>
+  <div class="h-64 md:h-72 lg:h-96 overflow-hidden" style={{backgroundImage: `url(${frontmatter.imageUrl})`, backgroundSize: 'cover'}} />
+</div>
