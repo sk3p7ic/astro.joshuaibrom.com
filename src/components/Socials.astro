@@ -39,7 +39,9 @@ const { standalone } = Astro.props;
       socials.map((soc) => (
         <a
           href={soc.href}
-          class={`font-inter text-xl flex flex-row items-center gap-4 text-fuchsia-500 hover:text-fuchsia-600 transition-colors ${standalone ? 'standalone' : ''}`}
+          class={`font-inter text-xl flex flex-row items-center gap-4 text-fuchsia-500 hover:text-fuchsia-600 transition-colors ${
+            standalone ? "standalone" : ""
+          }`}
         >
           <Icon name={soc.icon} class="w-8 h-auto" />
           <span>{soc.displayName}</span>
@@ -50,10 +52,10 @@ const { standalone } = Astro.props;
 </div>
 
 <style>
-@tailwind components;
-@layer components {
-  .standalone {
-    @apply bg-zinc-600;
+  @tailwind components;
+  @layer components {
+    .standalone {
+      @apply bg-zinc-600;
+    }
   }
-}
 </style>
