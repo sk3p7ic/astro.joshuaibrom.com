@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon";
+const socials = [
+  {
+    name: "GitHub",
+    href: "https://github.com/sk3p7ic",
+    icon: "simple-icons:github",
+    displayName: "@sk3p7ic",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/joshua-ibrom",
+    icon: "simple-icons:linkedin",
+    displayName: "@Joshua-Ibrom",
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/real_sk3p7ic",
+    icon: "simple-icons:twitter",
+    displayName: "@real_sk3p7ic",
+  },
+];
+---
+
+<div class="mt-4 mb-8 flex flex-col gap-4">
+  <h2
+    class="w-fit pb-1 font-raleway text-xl md:text-2xl lg:text-3xl xl:text-4xl border-b border-b-zinc-100"
+  >
+    socials.
+  </h2>
+  <div class="px-2 flex flex-col gap-4">
+    {
+      socials.map((soc) => (
+        <a href={soc.href} class="font-inter text-xl flex flex-row items-center gap-4 text-fuchsia-500 hover:text-fuchsia-600 transition-colors">
+          <Icon name={soc.icon} class="w-8 h-auto" />
+          <span>{soc.displayName}</span>
+        </a>
+      ))
+    }
+  </div>
+</div>
