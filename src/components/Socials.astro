@@ -46,6 +46,8 @@ const { standalone } = Astro.props;
           class={`font-inter text-xl flex flex-row items-center gap-4 text-fuchsia-500 hover:text-fuchsia-600 transition-colors ${
             standalone ? "standalone" : ""
           }`}
+          target="_blank"
+          rel="noopener norreferrer"
         >
           <Icon name={soc.icon} class="w-8 h-auto" />
           <span>{soc.displayName}</span>
