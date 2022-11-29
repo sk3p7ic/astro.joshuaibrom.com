@@ -1,0 +1,26 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+  const allProjects = await Astro.glob("../../../content/projects/*.md");
+
+  const paths = allProjects.map((proj) => {
+    // Get the name of the files and drop the extension
+    const slug = proj.file.split("/").pop()?.replace(".md", "");
+
+    return {
+      params: { slug },
+      props: { project: proj },
+    };
+  });
+  return paths;
+};
+
+const { project } = Astro.props;
+---
+
+<Layout title={`Joshua Ibrom -- ${project.frontmatter.title}`}>
+  <main>
+    <project.Content />
+  </main>
+</Layout>
