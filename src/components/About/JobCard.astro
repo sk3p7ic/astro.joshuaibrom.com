@@ -1,0 +1,19 @@
+---
+type JobEntryType = {
+  employer: string;
+  title: string;
+  start_date: string;
+  end_date?: string;
+  responsibilities: string | string[];
+}
+
+export interface Props {
+  entry: JobEntryType;
+}
+
+const {entry} = Astro.props;
+---
+
+<div>
+{entry.title}
+</div>

@@ -1,8 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import About from "../../components/Home/About.astro";
+import jobHistory from "../../util/jobHistory.json";
+import JobCard from "../../components/About/JobCard.astro";
 ---
 
 <Layout title="Joshua Ibrom -- About">
   <About standalone />
+  <!-- TODO: Troubleshoot the type error -->
+  {jobHistory.map((entry) => <JobCard entry={entry} />)}
 </Layout>
