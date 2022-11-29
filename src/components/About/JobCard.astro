@@ -5,15 +5,19 @@ type JobEntryType = {
   start_date: string;
   end_date?: string;
   responsibilities: string | string[];
-}
+};
 
 export interface Props {
   entry: JobEntryType;
 }
 
-const {entry} = Astro.props;
+const { entry } = Astro.props;
+
+const toDate = (ds?: string): string =>
+  ds ? Intl.DateTimeFormat("en-us").format(new Date(ds)) : "";
 ---
 
 <div>
-{entry.title}
+  {entry.title}
+  {toDate(entry.start_date)}
 </div>
