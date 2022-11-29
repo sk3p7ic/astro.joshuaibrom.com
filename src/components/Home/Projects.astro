@@ -13,6 +13,9 @@ const getFrontmatter = (p: typeof featuredProjects[0]) => {
   return { ...frontmatter, stack };
 };
 
+const getReadmeUrl = (p: typeof featuredProjects[0]): string =>
+  p.file.split("/").pop()?.replace(".md", "") ?? "/";
+
 // Get all projects listed in src/content/projects
 const featuredProjects = (await Astro.glob("../../content/projects/*.md"))
   .filter((p) => p.frontmatter.feature)
@@ -30,7 +33,10 @@ const featuredProjects = (await Astro.glob("../../content/projects/*.md"))
   <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
     {
       featuredProjects.map((p) => (
-        <ProjectCard frontmatter={getFrontmatter(p)} />
+        <ProjectCard
+          frontmatter={getFrontmatter(p)}
+          readmeUrl={`/projects/dig/${getReadmeUrl(p)}`}
+        />
       ))
     }
   </div>

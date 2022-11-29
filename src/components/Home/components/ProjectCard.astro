@@ -11,9 +11,10 @@ type FrontmatterType = {
 
 export interface Props {
   frontmatter: FrontmatterType;
+  readmeUrl: string;
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, readmeUrl } = Astro.props;
 ---
 
 <div class="bg-zinc-700 p-4 flex flex-col gap-2 rounded-lg">
@@ -28,5 +29,10 @@ const { frontmatter } = Astro.props;
   <div class="px-2 flex flex-row flex-wrap gap-4">
     {frontmatter.stack.map((tech) => <TechChip tech={tech} />)}
   </div>
-  <p>{frontmatter.description}</p>
+  <p class="flex-grow">{frontmatter.description}</p>
+  <a
+    href={readmeUrl}
+    class="p-2 font-nunito text-center text-zinc-900 bg-fuchsia-500 hover:bg-fuchsia-600 rounded-lg transition-all"
+    >Read More.</a
+  >
 </div>
