@@ -20,18 +20,27 @@ const socials = [
     displayName: "@real_sk3p7ic",
   },
 ];
+
+export interface Props {
+  standalone?: boolean;
+}
+
+const { standalone } = Astro.props;
 ---
 
 <div class="mt-4 mb-8 flex flex-col gap-4">
   <h2
     class="w-fit pb-1 font-raleway text-xl md:text-2xl lg:text-3xl xl:text-4xl border-b border-b-zinc-100"
   >
-    socials.
+    {standalone ? "find me elsewhere on the web." : "socials."}
   </h2>
   <div class="px-2 flex flex-col gap-4">
     {
       socials.map((soc) => (
-        <a href={soc.href} class="font-inter text-xl flex flex-row items-center gap-4 text-fuchsia-500 hover:text-fuchsia-600 transition-colors">
+        <a
+          href={soc.href}
+          class={`font-inter text-xl flex flex-row items-center gap-4 text-fuchsia-500 hover:text-fuchsia-600 transition-colors ${standalone ? 'standalone' : ''}`}
+        >
           <Icon name={soc.icon} class="w-8 h-auto" />
           <span>{soc.displayName}</span>
         </a>
@@ -39,3 +48,12 @@ const socials = [
     }
   </div>
 </div>
+
+<style>
+@tailwind components;
+@layer components {
+  .standalone {
+    @apply bg-zinc-600;
+  }
+}
+</style>
