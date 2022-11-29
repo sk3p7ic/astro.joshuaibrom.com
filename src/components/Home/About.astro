@@ -1,5 +1,10 @@
 ---
 import { Icon } from "astro-icon";
+export interface Props {
+  standalone?: boolean;
+}
+
+const { standalone } = Astro.props;
 ---
 
 <div class="mt-4 mb-8 flex flex-col gap-4">
@@ -27,9 +32,14 @@ import { Icon } from "astro-icon";
     <Icon name="mdi:file-document" class="w-8 h-auto" />
     <span class="text-lg">My Resume</span>
   </a>
-  <a
-    href="/about"
-    class="w-fit px-24 py-4 bg-fuchsia-500 hover:bg-fuchsia-600 transition-colors text-zinc-900 rounded-lg self-center"
-    >Learn More</a
-  >
+  {
+    !standalone && (
+      <a
+        href="/about"
+        class="w-fit px-24 py-4 bg-fuchsia-500 hover:bg-fuchsia-600 transition-colors text-zinc-900 rounded-lg self-center"
+      >
+        Learn More
+      </a>
+    )
+  }
 </div>
