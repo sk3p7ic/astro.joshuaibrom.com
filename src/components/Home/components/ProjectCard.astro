@@ -1,4 +1,6 @@
 ---
+import TechChip from "./TechChip.astro";
+
 type FrontmatterType = {
   title: string;
   description: string;
@@ -14,7 +16,17 @@ export interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<div>
-  <h3>{frontmatter.title}</h3>
-  {frontmatter.stack.map((x) => `${x}  `)}
+<div class="bg-zinc-700 p-4 flex flex-col gap-2 rounded-lg">
+  <h3 class="font-nunito text-lg lg:text-xl xl:text-3xl">
+    {frontmatter.title.toLocaleLowerCase()}.
+  </h3>
+  <img
+    src={frontmatter.imageUrl}
+    alt="Project screenshot / showcase image."
+    class="rounded-md"
+  />
+  <div class="px-2 flex flex-row flex-wrap gap-4">
+    {frontmatter.stack.map((tech) => <TechChip tech={tech} />)}
+  </div>
+  <p>{frontmatter.description}</p>
 </div>

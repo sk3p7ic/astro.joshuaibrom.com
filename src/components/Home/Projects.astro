@@ -1,11 +1,6 @@
 ---
 import ProjectCard from "./components/ProjectCard.astro";
 
-// Get all projects listed in src/content/projects
-const featuredProjects = (
-  await Astro.glob("../../content/projects/*.md")
-).filter((p) => p.frontmatter.feature);
-
 const getFrontmatter = (p: typeof featuredProjects[0]) => {
   const frontmatter = p.frontmatter as {
     title: string;
@@ -17,6 +12,13 @@ const getFrontmatter = (p: typeof featuredProjects[0]) => {
   const stack = frontmatter.stack.split(",");
   return { ...frontmatter, stack };
 };
+
+// Get all projects listed in src/content/projects
+const featuredProjects = (await Astro.glob("../../content/projects/*.md"))
+  .filter((p) => p.frontmatter.feature)
+  .sort(
+    (a, b) => getFrontmatter(b).stack.length - getFrontmatter(a).stack.length
+  );
 ---
 
 <div class="mt-4">
@@ -25,5 +27,11 @@ const getFrontmatter = (p: typeof featuredProjects[0]) => {
   >
     projects.
   </h2>
-  {featuredProjects.map((p) => <ProjectCard frontmatter={getFrontmatter(p)} />)}
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+    {
+      featuredProjects.map((p) => (
+        <ProjectCard frontmatter={getFrontmatter(p)} />
+      ))
+    }
+  </div>
 </div>
