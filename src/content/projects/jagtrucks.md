@@ -2,6 +2,7 @@
 title: JagTrucks
 description: A basic proof-of-concept website for allowing students at the TAMU-SA campus to more easily find which food trucks are on campus on a given day, and more.
 stack: react,bootstrap,node,express,mongodb
+category: Web -- Fullstack
 imageUrl: /res/projects/jag_trucks.png
 feature: true
 ---

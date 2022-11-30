@@ -2,6 +2,7 @@
 title: This Site
 description: My personal portfolio website.
 stack: astro,svelte,tailwind
+category: Web -- Frontend
 imageUrl: /res/projects/personal_site.png
 feature: true
 ---
