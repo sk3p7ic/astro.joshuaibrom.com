@@ -9,7 +9,7 @@ feature: true
 
 > GitHub (Frontend): [sk3p7ic/wad-JagTrucks](https://github.com/sk3p7ic/wad-JagTrucks)  
 > GitHub (Backend): [sk3p7ic/wad-JagTrucks-backend](https://github.com/sk3p7ic/wad-JagTrucks-backend)  
-> Deployment: [Heroku (Link may not work anymore)](https://wad-jagtrucks.herokuapp.com/)
+> Deployment: Previously deployed to ~~[Heroku](https://wad-jagtrucks.herokuapp.com/)~~ (RIP tons of projects)
 
 ## About
 
@@ -33,12 +33,12 @@ Please keep in mind that as such, this application was forced to follow set cons
 
 ### Backend
 
-- Node server running Express.
+- Node server running Express with Mongoose for the database connection.
 - A MongoDB instance running on MongoDB Atlas.
 
 ### Deployment
 
-- Deployed to Heroku.
+- Deployed to Heroku (before Heroku decided that it could not afford to keep hosting projects like mine and others).
 
 ## Constraints
 
