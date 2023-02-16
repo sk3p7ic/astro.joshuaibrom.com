@@ -8,7 +8,7 @@ feature: true
 ---
 
 > GitHub: [sk3p7ic/sorting-visualizer](https://github.com/sk3p7ic/sorting-visualizer)  
-> Deployment: [sorting.sk3p7ic.tech](https://sorting.sk3p7ic.tech)
+> Deployment: [GitHub Pages](https://sk3p7ic.github.io/Sorting-Visualizer/)
 
 ## About
 
