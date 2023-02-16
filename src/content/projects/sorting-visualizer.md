@@ -6,6 +6,7 @@ category: Web -- Frontend
 imageUrl: /res/projects/sorting_visualizer.png
 feature: true
 deployment: https://sk3p7ic.github.io/Sorting-Visualizer
+repos: GitHub,https://github.com/sk3p7ic/sorting-visualizer
 ---
 
 > GitHub: [sk3p7ic/sorting-visualizer](https://github.com/sk3p7ic/sorting-visualizer)  

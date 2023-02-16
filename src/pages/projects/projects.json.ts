@@ -7,6 +7,7 @@ type FrontmatterType = {
   imageUrl: string;
   featured: boolean;
   deployment?: string | undefined;
+  repos?: string | undefined;
 };
 
 type SoloFrontmatterType = {
@@ -15,6 +16,10 @@ type SoloFrontmatterType = {
   stack: string[];
   imageUrl: string;
   featured: boolean;
+  repos: {
+    title: string;
+    href: string;
+  }[];
   deployments?: string[] | undefined;
 };
 
@@ -25,7 +30,12 @@ const getFrontmatter = (p: ProjectFileType): SoloFrontmatterType => {
   const frontmatter = p.frontmatter;
   const stack = frontmatter.stack.split(",");
   const deployments = frontmatter?.deployment?.split(",") ?? undefined;
-  return { ...frontmatter, stack, deployments };
+  const repos =
+    frontmatter?.repos?.split(";").map((repo) => {
+      const [title, href] = repo.split(",");
+      return { title, href };
+    }) ?? [];
+  return { ...frontmatter, stack, deployments, repos };
 };
 
 const getAllProjects = async () => {

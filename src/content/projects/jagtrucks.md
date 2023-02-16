@@ -5,6 +5,7 @@ stack: react,bootstrap,node,express,mongodb
 category: Web -- Fullstack
 imageUrl: /res/projects/jag_trucks.png
 feature: true
+repos: GitHub (Frontend),https://github.com/sk3p7ic/wad-JagTrucks;GitHub (Backend),https://github.com/sk3p7ic/wad-JagTrucks-backend
 ---
 
 > GitHub (Frontend): [sk3p7ic/wad-JagTrucks](https://github.com/sk3p7ic/wad-JagTrucks)  
