@@ -5,6 +5,7 @@ stack: vue,tailwind
 category: Web -- Frontend
 imageUrl: /res/projects/sk3p7ic_dev.png
 feature: true
+deployment: https://sk3p7ic.tech
 ---
 
 > Deployment: [sk3p7ic.tech](https://sk3p7ic.tech)

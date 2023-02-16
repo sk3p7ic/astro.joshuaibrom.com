@@ -5,6 +5,7 @@ stack: astro,svelte,tailwind
 category: Web -- Frontend
 imageUrl: /res/projects/personal_site.png
 feature: true
+deployment: https://joshuaibrom.com
 ---
 
 > GitHub: [sk3p7ic/astro.joshuaibrom.com](https://github.com/sk3p7ic/astro.joshuaibrom.com)  
