@@ -1,5 +1,5 @@
 ---
-title: Sorting Visualizer
+title: Angular Sorting Visualizer
 description: A basic web application allowing a user to view various common sorting algorithms in use.
 stack: angular,sass
 category: Web -- Frontend
