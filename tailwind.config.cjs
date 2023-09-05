@@ -7,6 +7,7 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        sourceCodePro: ["Source Code Pro", "monospace"],
       },
     },
   },

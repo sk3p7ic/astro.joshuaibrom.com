@@ -34,6 +34,9 @@
   #mobile-nav-links a {
     @apply bg-zinc-900 p-2 rounded-md hover:bg-fuchsia-400 transition-all;
   }
+  code {
+    @apply font-sourceCodePro;
+  }
 }
 
 @layer components {
