@@ -4,7 +4,8 @@ description: A basic web application allowing a user to view various common sort
 stack: angular,sass
 category: Web -- Frontend
 imageUrl: /res/projects/sorting_visualizer.png
-feature: true
+feature: false
+date: Mar 10 2022
 deployment: https://sk3p7ic.github.io/Sorting-Visualizer
 repos: GitHub,https://github.com/sk3p7ic/sorting-visualizer
 ---

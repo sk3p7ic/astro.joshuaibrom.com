@@ -8,6 +8,7 @@ const getFrontmatter = (p: typeof featuredProjects[0]) => {
     stack: string;
     imageUrl: string;
     featured: boolean;
+    date: string;
   };
   const stack = frontmatter.stack.split(",");
   return { ...frontmatter, stack };
@@ -20,7 +21,9 @@ const getReadmeUrl = (p: typeof featuredProjects[0]): string =>
 const featuredProjects = (await Astro.glob("../../content/projects/*.md"))
   .filter((p) => p.frontmatter.feature)
   .sort(
-    (a, b) => getFrontmatter(b).stack.length - getFrontmatter(a).stack.length
+    (a, b) =>
+      new Date(getFrontmatter(b).date).getTime() -
+      new Date(getFrontmatter(a).date).getTime()
   );
 ---
 

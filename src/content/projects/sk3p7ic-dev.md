@@ -5,6 +5,7 @@ stack: vue,tailwind
 category: Web -- Frontend
 imageUrl: /res/projects/sk3p7ic_dev.png
 feature: true
+date: Jul 01 2022
 deployment: https://sk3p7ic.tech
 repos: GitHub,https://github.com/sk3p7ic/sk3p7ic-site
 ---

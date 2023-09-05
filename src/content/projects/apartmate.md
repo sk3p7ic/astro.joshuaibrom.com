@@ -5,14 +5,15 @@ stack: react,tailwind,firebase
 category: Web -- Fullstack
 imageUrl: /res/projects/apartmate.png
 feature: false
+date: Mar 01 2023
 ---
 
 ## About
 
 ApartMate was a project with the goal of offering a Tinder-like experience for apartment hunting.
- I worked on this project with two other team members from my university's ACM
- chapter, [Arturo Corona (@arty-aj)](https://github.com/arty-aj) and
- [Devin Madrigal (@devinom)](https://github.com/devinom).
+I worked on this project with two other team members from my university's ACM
+chapter, [Arturo Corona (@arty-aj)](https://github.com/arty-aj) and
+[Devin Madrigal (@devinom)](https://github.com/devinom).
 
 ## Features
 
@@ -51,4 +52,3 @@ Wrote the code to consume the Apartments.com scraper API.
 ### Devin Madrigal (@devinom)
 
 Configured the Firebase and GCP backends, as well as managed deployment to those backends.
-

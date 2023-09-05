@@ -5,6 +5,7 @@ stack: svelte
 category: Web -- Frontend
 imageUrl: /res/projects/svelte-sorting-visualizer.png
 feature: true
+date: Sep 04 2023
 deployment: https://sk3p7ic.github.io/Sorting-Visualizer
 repos: GitHub,https://github.com/sk3p7ic/sorting-visualizer
 ---

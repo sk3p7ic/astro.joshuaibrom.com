@@ -8,6 +8,7 @@ const getFrontmatter = (p: typeof allProjects[0]) => {
     stack: string;
     imageUrl: string;
     featured: boolean;
+    date: string;
   };
   const stack = frontmatter.stack.split(",");
   return { ...frontmatter, stack };
@@ -17,10 +18,12 @@ const getReadmeUrl = (p: typeof allProjects[0]): string =>
   p.file.split("/").pop()?.replace(".md", "") ?? "/";
 
 // Get all projects listed in src/content/projects
-const allProjects = (await Astro.glob("../../content/projects/*.md"))
-  .sort(
-    (a, b) => getFrontmatter(b).stack.length - getFrontmatter(a).stack.length
-  );
+const allProjects = (await Astro.glob("../../content/projects/*.md")).sort(
+  (a, b) =>
+    new Date(getFrontmatter(b).date).getTime() -
+    new Date(getFrontmatter(a).date).getTime()
+);
+console.log(allProjects);
 ---
 
 <div class="mt-4 mb-8 flex flex-col gap-4">
