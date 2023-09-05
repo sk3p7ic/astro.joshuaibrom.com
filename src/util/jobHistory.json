@@ -1,5 +1,18 @@
 [
   {
+    "employer": "TAMU-SA ITS Web Team",
+    "title": "Student Worker",
+    "start_date": "2023 8 28",
+    "end_date": "",
+    "responsibilities": [
+      "While working for TAMU-SA Information Technology Services I carried out the following duties:",
+      [
+        "Editing and creating pages on the University website in Cascade CMS.",
+        "Correspondence with faculty and staff regarding their webpages."
+      ]
+    ]
+  },
+  {
     "employer": "TAMU-SA University Police Dept.",
     "title": "Student Worker",
     "start_date": "2017 9 1",
