@@ -8,7 +8,18 @@
       "While working for TAMU-SA Information Technology Services I carried out the following duties:",
       [
         "Editing and creating pages on the University website in Cascade CMS.",
-        "Correspondence with faculty and staff regarding their webpages."
+        "Correspondence with faculty and staff regarding their webpages.",
+        "Working with checking and fixing broken links on the University website, using SiteImprove."
+      ],
+      "Additionally, I aided in the creation and maintenance of a new web application for the University in our compliance with HB 2504. This application was created using the following technologies:",
+      [
+        "A semi-traditional LAMP stack, though I cannot go into specifics due to the nature of the application.",
+        "HTML, CSS (mainly Bootstrap, but there was some custom styling), and JavaScript"
+      ],
+      "This application provides the following functionality:",
+      [
+        "A public-facing page that allows users to search for courses and view their syllabi, as well as to view the biography and CV of a staff / faculty member.",
+        "A private-facing page that allows faculty to upload their syllabi and course information, as well as to edit their biography and CV. Biography editing is done in a WYSIWYG editor, and CVs are PDF files that are uploaded to the server."
       ]
     ]
   },
