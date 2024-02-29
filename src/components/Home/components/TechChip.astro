@@ -30,7 +30,7 @@ const getTechIcon = (tech: string) => {
       return "simple-icons:react";
     case "remark":
     case "rehype":
-      return "simple-icons:code";
+      return "mdi:code-braces";
     case "sass":
       return "simple-icons:sass";
     case "sveltekit":
@@ -44,6 +44,8 @@ const getTechIcon = (tech: string) => {
       return "simple-icons:vercel";
     case "vue":
       return "simple-icons:vuedotjs";
+    default:
+      return "mdi:code-braces";
   }
 };
 
