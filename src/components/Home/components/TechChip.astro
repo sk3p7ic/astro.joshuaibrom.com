@@ -28,8 +28,12 @@ const getTechIcon = (tech: string) => {
       return "simple-icons:nodedotjs";
     case "react":
       return "simple-icons:react";
+    case "remark":
+    case "rehype":
+      return "mdi:code-braces";
     case "sass":
       return "simple-icons:sass";
+    case "sveltekit":
     case "svelte":
       return "simple-icons:svelte";
     case "tailwind":
@@ -40,6 +44,8 @@ const getTechIcon = (tech: string) => {
       return "simple-icons:vercel";
     case "vue":
       return "simple-icons:vuedotjs";
+    default:
+      return "mdi:code-braces";
   }
 };
 
