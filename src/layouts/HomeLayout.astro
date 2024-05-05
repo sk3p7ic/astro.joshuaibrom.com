@@ -1,0 +1,16 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title?: string;
+}
+
+let { title } = Astro.props;
+if (!title) {
+  title = "Joshua Ibrom | Junior Software Developer";
+}
+---
+
+<Layout title={title}>
+  <slot />
+</Layout>
