@@ -1,10 +1,12 @@
 <script lang="ts">
   import type { Tweened } from "svelte/motion";
-  import { writable } from "svelte/store";
+  import { writable, type Writable } from "svelte/store";
 
   export let scrollYRelative: Tweened<number>;
-  export let windowWidth: number;
-  export let baseHeight: number;
+  export let windowWidth: Writable<number>;
+  export let windowHeight: Writable<number>;
+  export let baseHeight: Writable<number>;
+  export let mousePos: Writable<{ x: number, y: number }>;
   export let idx: number;
 
   const getWidthOffset = () => {
@@ -19,7 +21,7 @@
       default:
         offset = 0;
     }
-    return windowWidth * offset;
+    return $windowWidth * offset;
   };
 
   function getHeightModifier() {
@@ -33,15 +35,35 @@
     }
   }
 
+  function getMouseBasedModifier() {
+    switch (idx) {
+      case 1:
+        return 0.1 * ($mousePos.x / $windowWidth * $mousePos.y / $windowHeight);
+      case 2:
+        return 0.2 * ($mousePos.x / $windowWidth * $mousePos.y / $windowHeight);
+      default:
+        return 0.0 * ($mousePos.x / $windowWidth * $mousePos.y / $windowHeight);
+    }
+  }
+
   const x1 = writable(0);
-  const y1 = writable(baseHeight);
-  const x2 = writable(windowWidth - getWidthOffset());
-  const y2 = writable(0 + (baseHeight * $scrollYRelative));
-  const x3 = writable(windowWidth - getWidthOffset());
-  const y3 = writable(baseHeight);
+  const y1 = writable($baseHeight);
+  const x2 = writable($windowWidth - getWidthOffset());
+  const y2 = writable(0 + ($baseHeight * $scrollYRelative));
+  const x3 = writable($windowWidth - getWidthOffset());
+  const y3 = writable($baseHeight);
 
   scrollYRelative.subscribe(v => {
-    y2.set(0 + (baseHeight * v) + (baseHeight * getHeightModifier()));
+    y2.set(0 + ($baseHeight * v) + ($baseHeight * getHeightModifier()));
+  });
+  windowWidth.subscribe(v => {
+    x2.set(v - getWidthOffset());
+    x3.set(v - getWidthOffset());
+  });
+  mousePos.subscribe(_ => {
+    x2.set($windowWidth - getWidthOffset() + ($windowWidth * getMouseBasedModifier() * 0.5));
+    y2.set(0 + ($baseHeight * $scrollYRelative) + ($baseHeight * getHeightModifier()) + ($baseHeight * getMouseBasedModifier()));
+    x3.set($windowWidth - getWidthOffset() + ($windowWidth * getMouseBasedModifier() * 0.5));
   });
 
   const color = writable("");

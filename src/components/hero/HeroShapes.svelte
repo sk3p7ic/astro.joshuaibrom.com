@@ -10,6 +10,7 @@
   const scrollY = writable(window.scrollY);
   const windowWidth = writable(window.innerWidth);
   const windowHeight = writable(window.innerHeight);
+  const mousePos = writable({ x: 0, y: 0 });
 
   const scrollYRelative = tweened(0, {
     duration: 500,
@@ -25,20 +26,22 @@
       windowWidth.set(window.innerWidth);
       windowHeight.set(window.innerHeight);
     };
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePos.set({ x: e.clientX, y: e.clientY });
+    };
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   });
 </script>
 
-<div>
-  <div>Shapes {$scrollY} ({$scrollYRelative}) {$windowWidth}</div><br />
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height={$maxHeight}>
-    <HeroPolygon scrollYRelative={scrollYRelative} windowWidth={$windowWidth} baseHeight={$maxHeight} idx={2} />
-    <HeroPolygon scrollYRelative={scrollYRelative} windowWidth={$windowWidth} baseHeight={$maxHeight} idx={1} />
-    <HeroPolygon scrollYRelative={scrollYRelative} windowWidth={$windowWidth} baseHeight={$maxHeight} idx={0} />
-  </svg>
-</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height={$maxHeight}>
+  <HeroPolygon scrollYRelative={scrollYRelative} windowWidth={windowWidth} windowHeight={windowHeight} baseHeight={maxHeight} idx={2} mousePos={mousePos} />
+  <HeroPolygon scrollYRelative={scrollYRelative} windowWidth={windowWidth} windowHeight={windowHeight} baseHeight={maxHeight} idx={1} mousePos={mousePos} />
+  <HeroPolygon scrollYRelative={scrollYRelative} windowWidth={windowWidth} windowHeight={windowHeight} baseHeight={maxHeight} idx={0} mousePos={mousePos} />
+</svg>
