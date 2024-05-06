@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Github",
+    "icon": "simple-icons:github",
+    "url": "https://github.com/sk3p7ic",
+    "username": "sk3p7ic"
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "simple-icons:linkedin",
+    "url": "https://linkedin.com/in/Joshua-Ibrom",
+    "username": "Joshua-Ibrom"
+  },
+  {
+    "name": "X",
+    "icon": "simple-icons:x",
+    "url": "https://twitter.com/real_sk3p7ic",
+    "username": "real_sk3p7ic"
+  },
+  {
+    "name": "My Personal Blog",
+    "icon": "material-symbols:laptop-chromebook-rounded",
+    "url": "https://github.com/sk3p7ic"
+  }
+]

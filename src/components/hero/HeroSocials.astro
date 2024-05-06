@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+import socials from "../../util/socials.json";
+
+type Social = {
+  name: string;
+  url: string;
+  icon: string;
+  username?: string;
+};
+
+const title = (s: Social) =>
+  s.username ? `${s.username} on ${s.name}` : s.name;
+---
+
+<div class="flex flex-row gap-8">
+  {
+    socials.map((s) => (
+      <a href={s.url} target="_blank" title={title(s)}>
+        <Icon name={s.icon} class="size-8 lg:size-10" />
+      </a>
+    ))
+  }
+</div>
