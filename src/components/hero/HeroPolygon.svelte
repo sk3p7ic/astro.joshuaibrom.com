@@ -4,9 +4,8 @@
 
   export let scrollYRelative: Tweened<number>;
   export let windowWidth: Writable<number>;
-  export let windowHeight: Writable<number>;
   export let baseHeight: Writable<number>;
-  export let mousePos: Writable<{ x: number, y: number }>;
+  export let sinuousOffset: Tweened<number>;
   export let idx: number;
 
   const getWidthOffset = () => {
@@ -35,17 +34,6 @@
     }
   }
 
-  function getMouseBasedModifier() {
-    switch (idx) {
-      case 1:
-        return 0.1 * ($mousePos.x / $windowWidth * $mousePos.y / $windowHeight);
-      case 2:
-        return 0.2 * ($mousePos.x / $windowWidth * $mousePos.y / $windowHeight);
-      default:
-        return 0.0 * ($mousePos.x / $windowWidth * $mousePos.y / $windowHeight);
-    }
-  }
-
   const x1 = writable(0);
   const y1 = writable($baseHeight);
   const x2 = writable($windowWidth - getWidthOffset());
@@ -60,10 +48,13 @@
     x2.set(v - getWidthOffset());
     x3.set(v - getWidthOffset());
   });
-  mousePos.subscribe(_ => {
-    x2.set($windowWidth - getWidthOffset() + ($windowWidth * getMouseBasedModifier() * 0.5));
-    y2.set(0 + ($baseHeight * $scrollYRelative) + ($baseHeight * getHeightModifier()) + ($baseHeight * getMouseBasedModifier()));
-    x3.set($windowWidth - getWidthOffset() + ($windowWidth * getMouseBasedModifier() * 0.5));
+  sinuousOffset.subscribe(v => {
+    if (idx !== 0) {
+      const mod = idx === 1 ? 0.05 : 0.1;
+      x2.set($windowWidth - getWidthOffset() + ($windowWidth * v * mod));
+      x3.set($windowWidth - getWidthOffset() + ($windowWidth * v * mod));
+    }
+    y2.set(0 + ($baseHeight * $scrollYRelative) + ($baseHeight * getHeightModifier()) + ($baseHeight * v * 0.1));
   });
 
   const color = writable("");
@@ -79,4 +70,4 @@
   }
 </script>
 
-<polygon fill={$color} points="{$x1},{$y1} {$x2},{$y2} {$x3},{$y3}" />
+<polygon fill={$color} points="{$x1},{$y1} {$x2},{$y2 + 24} {$x3},{$y3 + 24}" />
