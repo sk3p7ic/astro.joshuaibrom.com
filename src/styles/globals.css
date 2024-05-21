@@ -32,7 +32,7 @@
     @apply bg-zinc-700 p-4 mt-2;
   }
   #mobile-nav-links a {
-    @apply bg-zinc-900 p-2 rounded-md hover:bg-fuchsia-400 transition-all;
+    @apply bg-zinc-900 p-2 rounded-md hover:bg-fuchsia-400 hover:text-zinc-100 transition-all;
   }
   code {
     @apply font-sourceCodePro;
